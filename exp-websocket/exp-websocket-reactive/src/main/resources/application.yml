@@ -17,4 +17,4 @@ spring:
   profiles:
     active: dev
   application:
-    name: exp-websocket-mvc
+    name: exp-websocket-reactive
