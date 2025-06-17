@@ -1,4 +1,4 @@
-package io.github.mangocrisp.exp.wsm.werver;
+package io.github.mangocrisp.exp.wsm.server;
 
 import cn.hutool.core.collection.CollectionUtil;
 import cn.hutool.core.convert.Convert;
@@ -22,9 +22,7 @@ import java.util.List;
 public class WebSocketServer extends AbstractWebSocketServer {
 
     @Override
-    public void onMessage(Long userId, String message) {
-        // 获取到 session
-        Session session = getSession(userId);
+    public void onMessage(Session session, Long userId, String message) {
         // 从 session 里面拿请求参数，知道需要发送给的用户，这些用户可能是群发
         List<String> toUserIdList = session.getRequestParameterMap().get("toUserId");
         if (CollectionUtil.isNotEmpty(toUserIdList)) {

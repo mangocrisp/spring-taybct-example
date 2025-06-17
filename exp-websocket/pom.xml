@@ -5,10 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>io.github.mangocrisp</groupId>
-    <artifactId>spring-taybct-example</artifactId>
+    <artifactId>exp-websocket</artifactId>
     <version>3.2.2</version>
-    <name>Spring TayBct Example</name>
-    <description>Spring TayBct Example</description>
+    <name>Spring TayBct Example Websocket</name>
+    <description>Spring TayBct Example Websocket</description>
     <packaging>pom</packaging>
 
     <properties>
@@ -88,7 +88,8 @@
     </dependencies>
 
     <modules>
-        <module>exp-websocket</module>
+        <module>exp-websocket-mvc</module>
+        <module>exp-websocket-reactive</module>
     </modules>
 
     <build>
