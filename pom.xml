@@ -6,7 +6,7 @@
 
     <groupId>io.github.mangocrisp</groupId>
     <artifactId>spring-taybct-example</artifactId>
-    <version>3.2.2</version>
+    <version>3.2.3</version>
     <name>Spring TayBct Example</name>
     <description>Spring TayBct Example</description>
     <packaging>pom</packaging>
@@ -30,9 +30,9 @@
         <!--spring boot 版本依赖-->
         <spring-boot.version>3.2.5</spring-boot.version>
         <!--框架版本-->
-        <spring-taybct.version>3.2.2</spring-taybct.version>
+        <spring-taybct.version>3.2.3</spring-taybct.version>
         <!--工具版本-->
-        <spring-taybct-tools.version>3.2.2</spring-taybct-tools.version>
+        <spring-taybct-tools.version>3.2.3</spring-taybct-tools.version>
     </properties>
 
     <!-- 依赖声明 -->
