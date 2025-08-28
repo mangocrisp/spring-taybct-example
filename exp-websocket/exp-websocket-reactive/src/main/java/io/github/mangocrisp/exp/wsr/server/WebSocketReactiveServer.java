@@ -4,6 +4,9 @@ import cn.hutool.core.collection.CollectionUtil;
 import cn.hutool.core.convert.Convert;
 import io.github.mangocrisp.spring.taybct.tool.core.annotation.ServerReactiveEndpoint;
 import io.github.mangocrisp.spring.taybct.tool.core.websocket.endpoint.AbstractWebSocketReactiveServer;
+import io.github.mangocrisp.spring.taybct.tool.core.websocket.enums.MessageUserType;
+import io.github.mangocrisp.spring.taybct.tool.core.websocket.support.MessageUser;
+import io.github.mangocrisp.spring.taybct.tool.core.websocket.support.WSR;
 import io.github.mangocrisp.spring.taybct.tool.core.websocket.support.WebsocketReactiveSession;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 
@@ -28,13 +31,17 @@ public class WebSocketReactiveServer extends AbstractWebSocketReactiveServer {
         // 从 session 里面拿请求参数，知道需要发送给的用户，这些用户可能是群发
         List<String> toUserIdList = requestParameter.get("toUserId");
         if (CollectionUtil.isNotEmpty(toUserIdList)) {
-            toUserIdList.forEach(toUserId -> {
-                // 如果转换失败，就发给自己
-                sendSimpleMessage(userId, message, Convert.toLong(toUserId, userId));
-                // 发送成功之后发送给自己知道已经发送成功
-                sendSimpleMessage("发送成功！", userId);
-            });
+            toUserIdList.forEach(toUserId -> sendMessage(WSR.ok(message)
+                    .setFromUser(new MessageUser(MessageUserType.USER, userId, session.session().getId()))
+                    .setToUserId(Convert.toLong(toUserId))));
         }
     }
 
+    @Override
+    public void onMessage(WebsocketReactiveSession session, Long userId, byte[] binaryMessage) {
+        // 文件传输测试
+        if (binaryMessage != null){
+            sendMessage(WSR.ok().setBytes(binaryMessage));
+        }
+    }
 }
