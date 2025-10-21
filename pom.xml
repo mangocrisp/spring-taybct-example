@@ -6,7 +6,7 @@
 
     <groupId>io.github.mangocrisp</groupId>
     <artifactId>spring-taybct-example</artifactId>
-    <version>3.2.3</version>
+    <version>3.5.0-beta.1</version>
     <name>Spring TayBct Example</name>
     <description>Spring TayBct Example</description>
     <packaging>pom</packaging>
@@ -15,24 +15,21 @@
         <!-- Collection 增强Java集合框架 -->
         <commons-collections4.version>4.4</commons-collections4.version>
         <!--jdk 版本-->
-        <java.version>17</java.version>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
+        <java.version>21</java.version>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+        <maven.compiler.release>21</maven.compiler.release>
         <!--maven 打包工具，可以把各个模块打的包移动到同一个 target 文件夹下面方便部署-->
         <maven-antrun-plugin.version>3.1.0</maven-antrun-plugin.version>
         <!--maven 插件-->
-        <maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
+        <maven-compiler-plugin.version>3.14.1</maven-compiler-plugin.version>
         <!--maven 源码插件-->
         <maven-source-plugin.version>3.3.1</maven-source-plugin.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!--spring boot 版本依赖-->
-        <spring-boot-maven-plugin.version>3.2.5</spring-boot-maven-plugin.version>
-        <!--spring boot 版本依赖-->
-        <spring-boot.version>3.2.5</spring-boot.version>
-        <!--框架版本-->
-        <spring-taybct.version>3.2.3</spring-taybct.version>
+        <spring-boot.version>3.5.6</spring-boot.version>
         <!--工具版本-->
-        <spring-taybct-tools.version>3.2.3</spring-taybct-tools.version>
+        <spring-taybct-tools.version>3.5.0-beta.1</spring-taybct-tools.version>
     </properties>
 
     <!-- 依赖声明 -->
@@ -43,15 +40,6 @@
                 <groupId>io.github.mangocrisp</groupId>
                 <artifactId>spring-taybct-tools-dependencies</artifactId>
                 <version>${spring-taybct-tools.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-
-            <!--依赖版本管理-->
-            <dependency>
-                <groupId>io.github.mangocrisp</groupId>
-                <artifactId>spring-taybct-dependencies</artifactId>
-                <version>${spring-taybct.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -111,7 +99,7 @@
                 <plugin>
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-maven-plugin</artifactId>
-                    <version>${spring-boot-maven-plugin.version}</version>
+                    <version>${spring-boot.version}</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>

@@ -6,7 +6,7 @@
     <parent>
         <groupId>io.github.mangocrisp</groupId>
         <artifactId>exp-websocket</artifactId>
-        <version>3.2.3</version>
+        <version>3.5.0-beta.1</version>
     </parent>
 
     <artifactId>exp-websocket-reactive</artifactId>
@@ -15,8 +15,9 @@
     <description>websocket mvc example</description>
 
     <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+        <maven.compiler.release>21</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
